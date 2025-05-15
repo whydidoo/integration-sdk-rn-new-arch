@@ -1,0 +1,49 @@
+{
+  "name": "MiniApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "lint": "eslint .",
+    "start": "react-native start --port 9000",
+    "test": "jest",
+    "bundle:android": "react-native bundle --platform android --entry-file index.js --dev false"
+  },
+  "dependencies": {
+    "@module-federation/enhanced": "^0.13.1",
+    "@module-federation/runtime": "^0.13.1",
+    "react": "19.0.0",
+    "react-native": "0.79.2",
+    "react-native-svg": "15.11.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@callstack/repack": "5.1.0-rc.0",
+    "@react-native-community/cli": "18.0.0",
+    "@react-native-community/cli-platform-android": "18.0.0",
+    "@react-native-community/cli-platform-ios": "18.0.0",
+    "@react-native/babel-preset": "0.79.2",
+    "@react-native/eslint-config": "0.79.2",
+    "@react-native/metro-config": "0.79.2",
+    "@react-native/typescript-config": "0.79.2",
+    "@rspack/core": "^1.2.8",
+    "@svgr/webpack": "^8.1.0",
+    "@swc/helpers": "^0.5.15",
+    "@types/jest": "^29.5.13",
+    "@types/react": "^19.0.0",
+    "@types/react-test-renderer": "^19.0.0",
+    "babel-plugin-inline-import": "^3.0.0",
+    "eslint": "^8.19.0",
+    "jest": "^29.6.3",
+    "prettier": "2.8.8",
+    "react-native-svg-transformer": "^1.5.1",
+    "react-test-renderer": "19.0.0",
+    "typescript": "5.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
