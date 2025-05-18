@@ -1,0 +1,57 @@
+{
+  "name": "RNSDK",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "lint": "eslint .",
+    "start": "react-native start --port 8081",
+    "test": "jest",
+    "prepare": "ts-node --project tsconfig.replace-plugin.json ./scripts/patch-gradle-plugin.ts",
+    "postinstall": "ts-node --project tsconfig.replace-plugin.json ./scripts/patch-gradle-plugin.ts",
+    "build:js:android": "react-native bundle --entry-file index.js --dev false --platform android --bundle-output android/app/src/main/assets/index.android.bundle",
+    "generate:android:schema": "cd android && ./gradlew generateCodegenArtifactsFromSchema",
+    "android:sdk": "cd android && ./gradlew assembleRelease",
+    "build:android:sdk": "yarn install &&  yarn build:js:android && yarn generate:android:schema && yarn android:sdk"
+  },
+  "dependencies": {
+    "@module-federation/enhanced": "^0.13.1",
+    "@module-federation/retry-plugin": "^0.13.1",
+    "@module-federation/runtime": "^0.13.1",
+    "@react-native-community/netinfo": "^11.4.1",
+    "react": "19.0.0",
+    "react-error-boundary": "5",
+    "react-native": "0.79.2",
+    "react-native-edge-to-edge": "1.6.0",
+    "react-native-svg": "15.11.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@callstack/repack": "^5.1.0-rc.0",
+    "@react-native-community/cli": "18.0.0",
+    "@react-native-community/cli-platform-android": "18.0.0",
+    "@react-native-community/cli-platform-ios": "18.0.0",
+    "@react-native/babel-preset": "0.79.2",
+    "@react-native/eslint-config": "0.79.2",
+    "@react-native/metro-config": "0.79.2",
+    "@react-native/typescript-config": "0.79.2",
+    "@rspack/core": "^1.2.8",
+    "@swc/helpers": "^0.5.15",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^22.15.17",
+    "@types/react": "^19.0.0",
+    "@types/react-test-renderer": "^19.0.0",
+    "eslint": "^8.19.0",
+    "jest": "^29.6.3",
+    "prettier": "2.8.8",
+    "react-test-renderer": "19.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "5.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

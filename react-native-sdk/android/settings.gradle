@@ -1,0 +1,44 @@
+pluginManagement {
+    includeBuild("../node_modules/@react-native/gradle-plugin")
+
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url "https://www.jitpack.io" }
+        maven { url "https://maven.google.com" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://developer.huawei.com/repo/" }
+    }
+}
+
+plugins {
+    id "com.facebook.react.settings"
+}
+
+def reactSettingsExtension = extensions.findByType(com.facebook.react.ReactSettingsExtension)
+reactSettingsExtension?.autolinkLibrariesFromCommand()
+
+rootProject.name = "android"
+include ":app"
+includeBuild("../node_modules/@react-native/gradle-plugin")
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://www.jitpack.io" }
+        maven { url "https://maven.google.com" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://developer.huawei.com/repo/" }
+    }
+}
+
+
